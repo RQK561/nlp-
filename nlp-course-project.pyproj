@@ -1,0 +1,83 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>66493381-0495-460a-9051-67703b6ec4f9</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>nlp_course_project.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>nlp-course-project</Name>
+    <RootNamespace>nlp-course-project</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.14</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="experiments\ablation.py" />
+    <Compile Include="experiments\improve.py" />
+    <Compile Include="experiments\reproduce.py" />
+    <Compile Include="experiments\__init__.py" />
+    <Compile Include="nlp_course_project.py" />
+    <Compile Include="src\data\dataloader.py" />
+    <Compile Include="src\data\__init__.py" />
+    <Compile Include="src\evaluation\evaluator.py" />
+    <Compile Include="src\evaluation\__init__.py" />
+    <Compile Include="src\models\base_adapter.py" />
+    <Compile Include="src\models\improved_adapter.py" />
+    <Compile Include="src\models\__init__.py" />
+    <Compile Include="src\training\trainer.py" />
+    <Compile Include="src\training\__init__.py" />
+    <Compile Include="src\utils\logger.py" />
+    <Compile Include="src\utils\seed.py" />
+    <Compile Include="src\utils\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="experiments\" />
+    <Folder Include="notebooks\" />
+    <Folder Include="src\" />
+    <Folder Include="src\data\" />
+    <Folder Include="src\models\" />
+    <Folder Include="src\evaluation\" />
+    <Folder Include="src\utils\" />
+    <Folder Include="src\training\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="config.yaml" />
+    <Content Include="notebooks\analysis.ipynb" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.14" />
+    <InterpreterReference Include="Global|VisualStudio|Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="venv\">
+      <Id>venv</Id>
+      <Version>3.14</Version>
+      <Description>venv (Python 3.14 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
